@@ -10,7 +10,24 @@
   <title>document</title>
 </head>
 <body>
+<div id="root" class="container">
 
+    <div class="slider-wrapper">
+        <div class="prev">
+            <i @click="prevImg" class="fas fa-angle-left"></i>
+        </div>
+        <div class="images">
+            <img :src="immagini[counter]" alt="">
+        </div>
+        <div class="next">
+            <i @click="nextImg" class="fas fa-angle-right"></i>
+        </div>
+        <div class="nav">
+            <i @click="pallinoAttivo(i)" class="fas fa-circle" v-for="(immagine, i) in immagini" :class="(i == counter) ? 'active' :'' "></i>
+        </div>
+    </div>
+
+  </div>
   
 
   <script src="js/script.js" charset="utf-8"></script>
